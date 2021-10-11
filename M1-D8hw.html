@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h1>This is the title of the page</h1>
+      <h1 class="myClass">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </header>
 
@@ -55,27 +55,33 @@
       */
 
       const changeTitle = function (newTitle) {
-        document.querySelector("h1").innerHTML = "Another ONE!" 
-      }
-      changeTitle()
+        document.querySelector("h1").innerHTML = "Another ONE!";
+      };
+      changeTitle();
 
       /* EXERCISE 2
        Write a function for changing the class of the title of the page in "myHeading".
       */
 
       const addClassToTitle = function () {
-         //document.getElementById // I was not able to do this exercise
-        
+        let title = document.querySelector("h1");
+        title.classList.remove("myClass");
+        title.classList.add("myHeading");
       };
+      addClassToTitle();
 
       /* EXERCISE 3
        Write a function for changing the text of only the p which are children of a div.
       */
 
       const changePcontent = function () {
-          document.getElementsByTagName("p")[0].innerHTML = "HEY ARE YOU NEWBY"
-      }
-       changePcontent()
+        let paras = document.querySelectorAll("div p");
+      for (let o; o<paras.length; o++)
+        let pElements = paras[o]
+        pElements.innerHTML= "another one"
+      };
+
+      changePcontent();
 
       /* EXERCISE 4
        Write a function for changing the href property of every link to https://www.google.com
@@ -89,10 +95,7 @@
        Write a function for adding a new list item in the second unordered list.
       */
 
-      const addToTheSecond = function (content) {
-          
-      
-      };
+      const addToTheSecond = function (content) {};
 
       /* EXERCISE 6
        Write a function for adding a second paragraph to the first div.
