@@ -76,9 +76,10 @@
 
       const changePcontent = function () {
         let paras = document.querySelectorAll("div p");
-      for (let o; o<paras.length; o++)
-        let pElements = paras[o]
-        pElements.innerHTML= "another one"
+        for (let o; o < paras.length; o++) {
+          let pElem = paras[o];
+          pElem.innerText = "another one";
+        }
       };
 
       changePcontent();
@@ -87,9 +88,13 @@
        Write a function for changing the href property of every link to https://www.google.com
       */
 
-      const changeUrls = function () {
-        // i need to work on it
-      };
+      // const changeUrls = function () {
+      //   const urls = document.querySelectorAll("a")
+      //   for (let i; i<changeUrls; i++)
+      //   const FAfa = urls[i]
+      //     a.href = "https://www.google.com"
+      // };
+      // changeUrls();
 
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
@@ -102,40 +107,58 @@
       */
 
       const addParagraph = function (content) {
-        //
+        const div = document.querySelectorAll("div")[0];
+        div.innerHTML += `<p>${content}</p>`;
       };
+      addParagraph("NEW PARAPAGRAPH");
 
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
       */
 
       const firstUlDisappear = function () {
-        //
+        const ul = document.querySelectorAll("ul")[0];
+        ul.remove();
       };
+      firstUlDisappear();
 
       /* EXERCISE 8
        Write a function for making the background of every unordered list green.
       */
 
       const paintItGreen = function () {
-        //
+        const uls = document.querySelectorAll("ul");
+        for (let i = 0; i < uls.length; i++) {
+          const ul = uls[i];
+          // ul.classList.add("b-green")
+          ul.style.backgroundColor = "green";
+        }
       };
+      paintItGreen();
 
       /* EXERCISE 9
        Make the heading of the page change color every time the user clicks on it.
       */
 
       const makeItClickable = function () {
-        //
+        const title = document.querySelector("h1");
+        title.addEventListener("click", function (e) {
+          e.target.classList.toggle("myHeading");
+        });
       };
+      makeItClickable();
 
       /* EXERCISE 10
        Change the footer text with something else when the user clicks on it.
       */
 
       const changeFooterText = function () {
-        //
+        const footer = document.querySelector(".footer");
+        footer.addEventListener("click", function (e) {
+          e.target.innerText = "something else";
+        });
       };
+      changeFooterText();
 
       /* EXERCISE 11
        Attach an event listener to the input field in the page for console logging its value just after any keystroke.
